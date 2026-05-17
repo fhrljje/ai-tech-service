@@ -1,10 +1,14 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Fahrul Tech Rescue",
-  description: "Landing page layanan rescue website, deployment, AI chatbot, dan security audit.",
+  title: "Phirk IT Solution",
+  description: "Layanan rescue website, deployment, AI chatbot, dan security audit untuk bisnis yang butuh eksekusi teknis cepat dan rapi.",
   icons: {
-    icon: "/icon.svg",
+    icon: [
+      { url: "/icon.svg?v=2", type: "image/svg+xml", sizes: "any" },
+    ],
+    shortcut: "/icon.svg?v=2",
+    apple: "/icon.svg?v=2",
   },
 };
 

@@ -209,10 +209,10 @@ export default function Home() {
           <div className="grid items-center gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:px-6 lg:pb-8">
             <div className="relative">
               <p className="font-[family:var(--font-display)] text-base tracking-[0.42em] text-cyan-200/80 uppercase sm:text-xl">
-                Fahrul Tech Rescue
+                PHIRK IT SOLUTION
               </p>
               <p className="mt-6 max-w-2xl text-lg leading-9 text-cyan-50/65 sm:text-2xl">
-                Rescue cepat untuk website bermasalah, deployment berantakan, dan kebutuhan automasi AI bisnis.
+                Solusi cepat untuk website bermasalah, deployment berantakan, dan kebutuhan automasi AI bisnis.
               </p>
 
               <div className="mt-10 inline-flex rounded-full border border-cyan-300/12 bg-cyan-300/[0.07] px-6 py-3 text-sm tracking-[0.15em] text-cyan-100/80 shadow-[0_0_30px_rgba(34,211,238,0.08)]">

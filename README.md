@@ -1,6 +1,6 @@
-# Fahrul Tech Rescue
+# Phirk IT Solution
 
-Landing page `Fahrul Tech Rescue` dibuat dengan Next.js App Router, Tailwind CSS, dan Docker production multi-stage.
+Landing page `Phirk IT Solution` dibuat dengan Next.js App Router, Tailwind CSS, dan Docker production multi-stage.
 
 ## Stack
 
