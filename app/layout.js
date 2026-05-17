@@ -2,7 +2,10 @@ import "./globals.css";
 
 export const metadata = {
   title: "Fahrul Tech Rescue",
-  description: "Landing page layanan rescue website, deployment, AI chatbot, dan security audit."
+  description: "Landing page layanan rescue website, deployment, AI chatbot, dan security audit.",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({ children }) {

@@ -1,0 +1,38 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="phirkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D9FF"/>
+      <stop offset="100%" stop-color="#9CFFF3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Main P Shape -->
+  <path d="
+    M120 120
+    H250
+    C320 120 360 155 360 210
+    C360 265 320 300 250 300
+    H180
+    V420
+    L130 450
+    V300
+    H120
+    C90 300 70 280 70 250
+    C70 220 90 200 120 200
+    H230
+    C270 200 290 190 290 160
+    C290 135 270 120 230 120
+    H120
+    Z
+  " fill="url(#phirkGradient)"/>
+
+  <!-- Circuit Lines -->
+  <rect x="40" y="130" width="170" height="18" rx="9" fill="url(#phirkGradient)"/>
+  <rect x="55" y="180" width="145" height="18" rx="9" fill="url(#phirkGradient)"/>
+  <rect x="40" y="230" width="120" height="18" rx="9" fill="url(#phirkGradient)"/>
+
+  <!-- Circuit Dots -->
+  <circle cx="35" cy="139" r="12" fill="url(#phirkGradient)"/>
+  <circle cx="50" cy="189" r="12" fill="url(#phirkGradient)"/>
+  <circle cx="35" cy="239" r="12" fill="url(#phirkGradient)"/>
+</svg>
