@@ -1,8 +1,15 @@
 services:
   app:
+    container_name: ai-tech-service-app
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - "8999:3000"
     restart: unless-stopped
+    networks:
+      - apps-network
+
+networks:
+  apps-network:
+    external: true
