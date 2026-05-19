@@ -1,16 +1,23 @@
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 
 export async function POST(request) {
   try {
-    const resend = new Resend(process.env.RESEND_API_KEY);
     const { name, email, service, message } = await request.json();
 
     if (!name?.trim() || !email?.trim() || !message?.trim()) {
       return Response.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-    await resend.emails.send({
-      from: "contact@phirk-itsolution.my.id",
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "lokimonkmonk.219@gmail.com",
+        pass: process.env.GMAIL_APP_PASSWORD,
+      },
+    });
+
+    await transporter.sendMail({
+      from: `"Phirk IT Solution" <lokimonkmonk.219@gmail.com>`,
       to: "lokimonkmonk.219@gmail.com",
       replyTo: email,
       subject: `[Phirk] New inquiry from ${name} — ${service || "General"}`,
