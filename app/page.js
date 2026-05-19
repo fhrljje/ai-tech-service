@@ -1,67 +1,70 @@
 import Image from "next/image";
+import ContactForm from "../components/contact-form";
+
+const siteUrl = "https://phirk-itsolution.my.id";
 
 const services = [
   {
     title: "Emergency Website Fix",
     description:
-      "Perbaikan cepat untuk website error, down, blank page, bug produksi, atau deploy yang gagal saat momen kritis."
+      "Fast fixes for error pages, downtime, blank screens, production bugs, or failed deployments at critical moments."
   },
   {
     title: "VPS Deployment & Docker Setup",
     description:
-      "Setup VPS rapi dengan Docker, reverse proxy, SSL, pipeline deploy, dan monitoring dasar agar aplikasi lebih stabil."
+      "Clean VPS setup with Docker, reverse proxy, SSL, deployment pipelines, and basic monitoring for a more stable application."
   },
   {
-    title: "AI Chatbot Bisnis",
+    title: "AI Business Chatbot",
     description:
-      "Bangun chatbot untuk lead capture, FAQ, dan support bisnis yang terhubung ke workflow operasional Anda."
+      "Build chatbots for lead capture, FAQ, and business support connected to your operational workflow."
   },
   {
     title: "Website Security Audit",
     description:
-      "Audit permukaan serangan, hardening dasar, validasi konfigurasi, serta rekomendasi teknis yang bisa langsung dijalankan."
+      "Attack surface audit, basic hardening, configuration validation, and actionable technical recommendations."
   }
 ];
 
 const pricing = [
   {
     name: "Website Error Fix",
-    price: "Rp300k",
-    note: "Mulai dari",
+    price: "$70",
+    note: "Starting from",
     features: [
-      "Bug produksi ringan",
-      "Blank page atau error mendadak",
-      "Cocok untuk kebutuhan rescue cepat"
+      "Minor production bugs",
+      "Blank pages or sudden errors",
+      "Ideal for quick rescue needs"
     ]
   },
   {
     name: "VPS Setup",
-    price: "Rp750k",
-    note: "Mulai dari",
+    price: "$150",
+    note: "Starting from",
     features: [
-      "Setup environment server",
-      "Deploy aplikasi ke VPS",
-      "Bisa dilanjutkan ke Docker stack"
+      "Server environment setup",
+      "Deploy applications to VPS",
+      "Can be extended to Docker stack"
     ]
   },
   {
-    name: "AI Chatbot Bisnis",
-    price: "Rp2.500k",
-    note: "Mulai dari",
+    name: "AI Business Chatbot",
+    price: "$800",
+    note: "Starting from",
     features: [
-      "Chatbot untuk FAQ atau lead capture",
-      "Integrasi knowledge base sederhana",
-      "Flow bisa disesuaikan kebutuhan bisnis"
+      "Chatbot for FAQ or lead capture",
+      "Simple knowledge base integration",
+      "Flow tailored to business needs"
     ]
   },
   {
     name: "Security Audit",
-    price: "Rp1.500k",
-    note: "Mulai dari",
+    price: "$300",
+    note: "Starting from",
     features: [
-      "Review dasar konfigurasi dan exposure",
-      "Temuan risiko prioritas",
-      "Rekomendasi teknis yang actionable"
+      "Basic configuration and exposure review",
+      "Priority risk findings",
+      "Actionable technical recommendations"
     ]
   }
 ];
@@ -69,62 +72,62 @@ const pricing = [
 const portfolio = [
   {
     title: "Anteiku Project",
-    result: "Portfolio live yang bisa dibuka langsung untuk melihat gaya implementasi dan kualitas hasil akhir.",
+    result: "Live portfolio you can visit directly to see the implementation style and quality of final results.",
     link: "https://anteiku.my.id",
-    cta: "Buka anteiku.my.id"
+    cta: "Visit anteiku.my.id"
   },
   {
-    title: "Migrasi aplikasi klien ke VPS Docker",
-    result: "Deploy jadi repeatable, downtime turun, dan rollback lebih aman."
+    title: "Client app migration to Docker VPS",
+    result: "Deployment became repeatable, downtime dropped, and rollback is now safer."
   },
   {
-    title: "Chatbot lead qualification untuk jasa",
-    result: "Pertanyaan awal tersaring otomatis sebelum masuk ke tim sales."
+    title: "Lead qualification chatbot for a service business",
+    result: "Initial questions are automatically filtered before reaching the sales team."
   }
 ];
 
 const caseStudies = [
   {
-    title: "Perbaikan OAuth Google kampus",
+    title: "Google OAuth Campus Fix",
     summary:
-      "Menangani integrasi login Google yang gagal setelah perubahan kredensial, redirect URI, dan konfigurasi environment produksi.",
-    metric: "1 stack login dipulihkan",
-    impact: "Akses pengguna kembali normal tanpa perubahan alur penggunaan."
+      "Handled a failing Google login integration after credential changes, redirect URI issues, and production environment misconfiguration.",
+    metric: "1 login stack recovered",
+    impact: "User access restored without changing the existing login flow."
   },
   {
-    title: "Recovery file dan database production",
+    title: "Production File & Database Recovery",
     summary:
-      "Melakukan identifikasi sumber kerusakan, validasi backup, dan recovery terkontrol untuk mengembalikan layanan inti secepat mungkin.",
-    metric: "Downtime ditekan",
-    impact: "File penting dan data operasional berhasil dipulihkan dengan prioritas integritas data."
+      "Identified the source of corruption, validated backups, and performed a controlled recovery to restore core services as quickly as possible.",
+    metric: "Downtime minimized",
+    impact: "Critical files and operational data recovered with data integrity as the top priority."
   },
   {
-    title: "Deployment Docker multi-service",
+    title: "Multi-service Docker Deployment",
     summary:
-      "Menyusun layanan aplikasi, database, reverse proxy, dan environment variable agar deployment lebih repeatable dan mudah dikelola.",
-    metric: "Multi-service siap deploy",
-    impact: "Proses rilis lebih stabil dan rollback lebih aman dibanding setup manual."
+      "Structured application services, databases, reverse proxy, and environment variables to make deployments more repeatable and manageable.",
+    metric: "Multi-service ready to deploy",
+    impact: "More stable release process and safer rollback compared to manual setup."
   },
   {
-    title: "Audit keamanan website",
+    title: "Website Security Audit",
     summary:
-      "Meninjau konfigurasi umum, permission, header, eksposur endpoint, dan celah implementasi dasar yang sering terlewat.",
-    metric: "Temuan prioritas dipetakan",
-    impact: "Owner mendapatkan daftar risiko teknis yang bisa langsung ditindaklanjuti."
+      "Reviewed general configuration, permissions, headers, endpoint exposure, and common implementation gaps that are often overlooked.",
+    metric: "Priority findings mapped",
+    impact: "Owner received a prioritized list of technical risks ready to be addressed."
   },
   {
-    title: "Troubleshooting Laravel production",
+    title: "Laravel Production Troubleshooting",
     summary:
-      "Menangani kasus error deployment, queue, permission storage, cache config, hingga masalah integrasi database di server live.",
-    metric: "Akar masalah diisolasi",
-    impact: "Aplikasi kembali berjalan dengan langkah perbaikan yang lebih terstruktur."
+      "Handled deployment errors, queue issues, storage permissions, config cache, and database integration problems on a live server.",
+    metric: "Root cause isolated",
+    impact: "Application restored with a more structured remediation approach."
   }
 ];
 
 const stats = [
-  { value: "< 2 Jam", label: "Respons awal untuk kasus darurat" },
-  { value: "24/7", label: "Fokus pada insiden prioritas" },
-  { value: "100%", label: "Stack disusun agar mudah di-maintain" }
+  { value: "< 2 Hours", label: "Initial response for emergency cases" },
+  { value: "24/7", label: "Focus on priority incidents" },
+  { value: "100%", label: "Stack built for easy maintenance" }
 ];
 
 const trustSignals = [
@@ -138,8 +141,26 @@ const trustSignals = [
 ];
 
 const whatsappMessage =
-  "Halo kak, saya ingin konsultasi terkait website/server saya.";
+  "Hi, I'd like to consult about my website/server.";
 const whatsappLink = `https://wa.me/6289693727848?text=${encodeURIComponent(whatsappMessage)}`;
+
+const faqItems = [
+  {
+    question: "Can you help with sudden production website errors?",
+    answer:
+      "Yes. The service is focused on rescuing websites with errors, blank pages, failed deployments, and production issues that need fast resolution."
+  },
+  {
+    question: "Do you handle VPS and Docker setup?",
+    answer:
+      "Yes. Services include VPS deployment, Docker setup, reverse proxy, SSL, and stack configuration for better stability and manageability."
+  },
+  {
+    question: "Can you help with website security audits?",
+    answer:
+      "Yes. Audits cover basic configuration review, headers, permissions, endpoint exposure, and actionable technical recommendations."
+  }
+];
 
 function WhatsAppIcon({ className = "h-5 w-5" }) {
   return (
@@ -155,11 +176,69 @@ function WhatsAppIcon({ className = "h-5 w-5" }) {
 }
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": `${siteUrl}/#organization`,
+        name: "Phirk IT Solution",
+        url: siteUrl,
+        image: `${siteUrl}/phirk-logo.png`,
+        description:
+          "IT Consultant and IT Solution services for emergency website rescue, VPS deployment, Docker setup, AI business chatbot, and website security audit.",
+        areaServed: "Worldwide",
+        serviceType: [
+          "IT Consultant",
+          "IT Solution",
+          "Website Rescue",
+          "VPS Deployment",
+          "Docker Setup",
+          "AI Chatbot",
+          "Website Security Audit",
+        ],
+        sameAs: ["https://wa.me/6289693727848"],
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: "+62-896-9372-7848",
+          contactType: "customer service",
+          areaServed: "Worldwide",
+          availableLanguage: ["en", "id"],
+        },
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        url: siteUrl,
+        name: "Phirk IT Solution",
+        publisher: {
+          "@id": `${siteUrl}/#organization`,
+        },
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${siteUrl}/#faq`,
+        mainEntity: faqItems.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      },
+    ],
+  };
+
   return (
     <main
       id="top"
       className="relative min-h-screen overflow-hidden bg-[linear-gradient(180deg,_#010307_0%,_#040812_28%,_#02040a_100%)] text-white"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="hero-haze pointer-events-none absolute inset-0" />
       <div className="hero-noise pointer-events-none absolute inset-0 opacity-50" />
       <div className="hero-vignette pointer-events-none absolute inset-0" />
@@ -201,7 +280,7 @@ export default function Home() {
                 className="hidden items-center gap-2 rounded-full border border-cyan-300/15 bg-white/[0.03] px-5 py-3 text-sm font-medium text-cyan-100 shadow-[0_0_40px_rgba(125,255,249,0.12)] transition hover:border-cyan-300/30 hover:bg-cyan-300/10 md:inline-flex"
               >
                 <WhatsAppIcon className="h-5 w-5" />
-                Konsultasi via WhatsApp
+                Consult via WhatsApp
               </a>
             </div>
           </header>
@@ -212,22 +291,22 @@ export default function Home() {
                 PHIRK IT SOLUTION
               </p>
               <p className="mt-6 max-w-2xl text-lg leading-9 text-cyan-50/65 sm:text-2xl">
-                Solusi cepat untuk website bermasalah, deployment berantakan, dan kebutuhan automasi AI bisnis.
+                Fast solutions for broken websites, messy deployments, and AI business automation.
               </p>
 
               <div className="mt-10 inline-flex rounded-full border border-cyan-300/12 bg-cyan-300/[0.07] px-6 py-3 text-sm tracking-[0.15em] text-cyan-100/80 shadow-[0_0_30px_rgba(34,211,238,0.08)]">
-                Incident response, deployment, AI integration, dan audit keamanan
+                Incident response, deployment, AI integration, and security audits
               </div>
 
               <h1 className="hero-title mt-12 max-w-5xl text-5xl leading-[1.08] tracking-[-0.04em] text-white sm:text-6xl lg:text-[5.35rem]">
-                Website error
-                <span className="block mt-2">tengah malam?</span>
-                <span className="hero-title-accent mt-5 block">Saya bantu bereskan</span>
-                <span className="hero-title-accent block">dengan cepat dan rapi.</span>
+                Website down
+                <span className="block mt-2">at midnight?</span>
+                <span className="hero-title-accent mt-5 block">I&apos;ll fix it fast</span>
+                <span className="hero-title-accent block">and keep it clean.</span>
               </h1>
 
               <p className="mt-10 max-w-3xl text-base leading-8 text-slate-300/80 sm:text-xl sm:leading-9">
-                Layanan ini dibuat untuk bisnis, kampus, agency, dan tim kecil yang butuh orang teknis yang bisa langsung masuk ke problem produksi, membaca pola error, lalu mengeksekusi solusi dengan rapi.
+                Phirk IT Solution helps businesses, agencies, and small teams that need an IT Consultant for production issues, website rescue, VPS deployment, and clean technical solutions.
               </p>
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -238,13 +317,28 @@ export default function Home() {
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-cyan-200/20 bg-cyan-200/90 px-7 py-4 text-sm font-bold text-slate-950 shadow-[0_0_35px_rgba(125,255,249,0.25)] transition hover:bg-white"
                 >
                   <WhatsAppIcon className="h-5 w-5" />
-                  Hubungi via WhatsApp
+                  Contact via WhatsApp
                 </a>
                 <a
                   href="#pricing"
                   className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/[0.04] px-7 py-4 text-sm font-semibold text-white transition hover:bg-white/[0.08]"
                 >
-                  Lihat Pricing
+                  View Pricing
+                </a>
+              </div>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href="/it-consultant"
+                  className="inline-flex items-center rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-300/20"
+                >
+                  IT Consultant
+                </a>
+                <a
+                  href="/it-solution"
+                  className="inline-flex items-center rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-300/20"
+                >
+                  IT Solution
                 </a>
               </div>
 
@@ -267,7 +361,7 @@ export default function Home() {
                 <div className="mb-10 flex items-center justify-between gap-4">
                   <div>
                     <p className="text-sm tracking-[0.34em] text-cyan-200/70 uppercase">Live Ops Panel</p>
-                    <p className="mt-3 text-3xl font-semibold text-white/95">Mode Rescue Aktif</p>
+                    <p className="mt-3 text-3xl font-semibold text-white/95">Rescue Mode Active</p>
                   </div>
                   <span className="rounded-full border border-cyan-200/15 bg-cyan-200/[0.08] px-4 py-2 text-sm font-medium text-cyan-100/85">
                     Available
@@ -276,10 +370,10 @@ export default function Home() {
 
                 <div className="space-y-4">
                   {[
-                    "Diagnosa downtime dan error produksi",
-                    "Deploy VPS dan container lebih tertata",
-                    "Audit keamanan website dan server",
-                    "Integrasi chatbot untuk kebutuhan bisnis"
+                    "Diagnose downtime and production errors",
+                    "Deploy VPS and containers cleanly",
+                    "Website and server security audits",
+                    "Chatbot integration for business needs"
                   ].map((item) => (
                     <div
                       key={item}
@@ -293,7 +387,7 @@ export default function Home() {
                 <div className="mt-8 rounded-[1.8rem] border border-cyan-300/12 bg-cyan-300/[0.06] p-5">
                   <p className="text-xs tracking-[0.3em] text-cyan-100/75 uppercase">Priority Support</p>
                   <p className="mt-3 text-lg font-semibold text-white/95">
-                    Cocok untuk founder, agency, atau tim kecil yang butuh partner teknis siap eksekusi.
+                    Ideal for founders, agencies, or small teams that need a technical partner ready to execute.
                   </p>
                 </div>
               </div>
@@ -325,11 +419,11 @@ export default function Home() {
                 Trust Signal
               </p>
               <h2 className="mt-3 text-2xl font-semibold text-white sm:text-3xl">
-                Kombinasi web engineering, security, dan riset yang jarang dimiliki dalam satu profile
+                A rare combination of web engineering, security, and research in a single profile
               </h2>
             </div>
             <p className="max-w-2xl text-slate-300">
-              Ini yang membedakan layanan ini dari jasa web biasa: tidak hanya bisa membangun, tapi juga menganalisis, mengamankan, dan menstabilkan sistem produksi.
+              What sets this service apart from typical web agencies: not just building, but analyzing, securing, and stabilizing production systems.
             </p>
           </div>
 
@@ -352,10 +446,10 @@ export default function Home() {
             <p className="font-[family:var(--font-display)] text-sm tracking-[0.35em] text-cyan-300 uppercase">
               Pricing
             </p>
-            <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">Harga sederhana yang mudah dipahami dari awal</h2>
+            <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">Simple pricing, clear from the start</h2>
           </div>
           <p className="max-w-2xl text-slate-300">
-            Orang Indonesia biasanya lebih nyaman melihat range harga lebih dulu. Angka di bawah ini adalah harga mulai dari, dan finalnya mengikuti tingkat kompleksitas kasus.
+            The numbers below are starting prices — the final cost depends on the complexity of your case.
           </p>
         </div>
 
@@ -390,7 +484,7 @@ export default function Home() {
           <p className="font-[family:var(--font-display)] text-sm tracking-[0.35em] text-cyan-300 uppercase">
             Portfolio
           </p>
-          <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">Contoh hasil kerja yang fokus ke dampak nyata</h2>
+          <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">Work samples focused on real-world impact</h2>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-3">
@@ -423,11 +517,11 @@ export default function Home() {
               Case Study
             </p>
             <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
-              Pengalaman teknis yang dekat dengan kebutuhan rescue dan produksi
+              Technical experience close to real rescue and production needs
             </h2>
           </div>
           <p className="max-w-2xl text-slate-300">
-            Section ini disusun untuk menampilkan pola masalah yang umum terjadi di lapangan: autentikasi, recovery data, deployment, security, dan troubleshooting aplikasi live.
+            This section highlights common problem patterns from the field: authentication, data recovery, deployment, security, and live application troubleshooting.
           </p>
         </div>
 
@@ -472,10 +566,10 @@ export default function Home() {
       <section className="mx-auto max-w-7xl px-6 pb-20 sm:px-10 lg:px-12">
         <div className="rounded-[2rem] border border-cyan-300/30 bg-[linear-gradient(135deg,rgba(8,145,178,0.28),rgba(17,24,39,0.92))] p-8 shadow-[0_0_100px_rgba(34,211,238,0.12)] sm:p-10">
           <p className="font-[family:var(--font-display)] text-sm tracking-[0.35em] text-cyan-100 uppercase">
-            Siap Eksekusi
+            Ready to Execute
           </p>
           <h2 className="mt-4 max-w-3xl text-3xl font-semibold sm:text-4xl">
-            Jika website sedang bermasalah atau Anda ingin menata stack dengan lebih profesional, mulai dari WhatsApp.
+            If your website is having issues or you want to build a more professional stack, start with WhatsApp.
           </h2>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <a
@@ -491,8 +585,32 @@ export default function Home() {
               href="#top"
               className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-4 text-sm font-semibold text-white transition hover:bg-white/10"
             >
-              Kembali ke atas
+              Back to Top
             </a>
+          </div>
+        </div>
+      </section>
+
+      <ContactForm />
+
+      <section className="mx-auto max-w-7xl px-6 pb-16 sm:px-10 lg:px-12">
+        <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 backdrop-blur sm:p-10">
+          <p className="font-[family:var(--font-display)] text-sm tracking-[0.35em] text-cyan-300 uppercase">
+            FAQ
+          </p>
+          <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+            Common questions before getting started
+          </h2>
+          <div className="mt-8 space-y-4">
+            {faqItems.map((item) => (
+              <article
+                key={item.question}
+                className="rounded-[1.5rem] border border-white/10 bg-slate-950/40 p-6"
+              >
+                <h3 className="text-lg font-semibold text-white">{item.question}</h3>
+                <p className="mt-3 text-base leading-8 text-slate-300">{item.answer}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -508,7 +626,7 @@ export default function Home() {
           <WhatsAppIcon className="h-6 w-6" />
         </span>
         <span className="hidden pr-1 sm:block">
-          Chat WhatsApp
+          Chat on WhatsApp
         </span>
       </a>
     </main>
